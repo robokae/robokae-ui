@@ -48,6 +48,9 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "@fontsource/plus-jakarta-sans": "^5.2.6",
+    "polished": "^4.3.1",
+    "react-bootstrap-icons": "^1.11.6",
     "webpack": "^5.88.2"
   }
 }
