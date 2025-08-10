@@ -1,37 +1,41 @@
-const button = {
-  background: "#4AA4D1",
-  foreground: {
-    primary: "#4AA4D1",
-    secondary: "#F8F8F8",
-  },
-};
-
 export const lightTheme = {
   background: {
     primary: "#F0F1F2",
     secondary: "#F8F8F8",
   },
   text: {
-    primary: "#233B45",
-    secondary: "#6C757D",
+    primary: "#29353D",
+    secondary: "#66727E",
   },
-  button: button,
-  accent: "#5EB0EB",
-  line: "#D8DCE0",
+  accent: "#6F8FA6",
+  button: {
+    background: "#6F8FA6",
+    foreground: {
+      primary: "#6F8FA6",
+      secondary: "#F8F8F8",
+    },
+  },
+  line: "#C5CBD0",
   overlay: "rgba(18, 28, 32, 0.85)",
   boxShadow: "0.5rem 0.5rem 1rem rgba(153, 174, 215, 0.2)",
 };
 
 export const darkTheme = {
   background: {
-    primary: "#121B20",
-    secondary: "#171F25",
+    primary: "#11191F",
+    secondary: "#182128",
   },
   text: {
-    primary: "#DFEBF5",
-    secondary: "#A4ADB7",
+    primary: "#DFEDEE",
+    secondary: "#758392",
   },
-  button: button,
+  button: {
+    background: "#97DBFB",
+    foreground: {
+      primary: "#97DBFB",
+      secondary: "#121B20",
+    },
+  },
   accent: "#97DBFB",
   line: "#2D343A",
   overlay: "rgba(15, 20, 22, 0.85)",
