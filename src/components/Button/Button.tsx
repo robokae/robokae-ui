@@ -1,5 +1,4 @@
-import React, { FC } from "react";
-import { ButtonProps } from "./Button.types";
+import React, { ButtonHTMLAttributes, FC } from "react";
 import { ArrowRight } from "react-bootstrap-icons";
 import {
   Container,
@@ -8,40 +7,57 @@ import {
   PlainButton,
 } from "./Button.styles";
 
-const Button: FC<ButtonProps> = ({
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: "filled" | "outline" | "plain";
+  rounded?: boolean;
+  arrow?: boolean;
+}
+
+const Button: FC<Props> = ({
   variant = "plain",
   rounded = false,
   arrow = false,
   disabled = false,
   onClick,
-  ...props
+  children,
+  ...rest
 }) => {
-  const children = arrow ? (
+  const content = arrow ? (
     <Container>
-      {props.children}
+      {children}
       <ArrowRight />
     </Container>
   ) : (
-    props.children
+    children
   );
 
   switch (variant) {
     case "filled":
       return (
-        <FilledButton rounded={rounded} disabled={disabled} onClick={onClick}>
-          {children}
+        <FilledButton
+          rounded={rounded}
+          disabled={disabled}
+          onClick={onClick}
+          {...rest}
+        >
+          {content}
         </FilledButton>
       );
     case "outline":
       return (
-        <OutlinedButton rounded={rounded} disabled={disabled} onClick={onClick}>
-          {children}
+        <OutlinedButton
+          rounded={rounded}
+          disabled={disabled}
+          onClick={onClick}
+          {...rest}
+        >
+          {content}
         </OutlinedButton>
       );
     default:
       return (
-        <PlainButton onClick={onClick} disabled={disabled}>
-          {children}
+        <PlainButton onClick={onClick} disabled={disabled} {...rest}>
+          {content}
         </PlainButton>
       );
   }

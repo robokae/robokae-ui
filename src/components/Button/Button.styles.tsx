@@ -1,13 +1,14 @@
 import { darken } from "polished";
 import styled, { css } from "styled-components";
+import { borderRadius, gap } from "../../constants";
 
 const baseStyles = css`
   padding: 0.5rem 1rem;
   border: transparent;
   outline: none;
-  color: ${({ theme }) => theme.button.foreground.primary};
+  color: ${({ theme }) => theme.accent};
   background-color: transparent;
-  border-radius: 0.25rem;
+  border-radius: ${borderRadius.sm};
   cursor: pointer;
   transition: all 0.25s ease-in-out;
 
@@ -22,7 +23,7 @@ const roundedStyle = css<{ rounded?: boolean }>`
   ${({ rounded }) =>
     rounded &&
     css`
-      border-radius: 9999px;
+      border-radius: ${borderRadius.pill};
     `}
 `;
 
@@ -33,7 +34,11 @@ export const FilledButton = styled.button<{ rounded?: boolean }>`
   background-color: ${({ theme }) => theme.button.background};
 
   &:hover {
-    background-color: ${({ theme }) => darken(0.05, theme.button.background)};
+    background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.1) 100%
+    );
   }
 `;
 
@@ -54,6 +59,6 @@ export const PlainButton = styled.button`
 
 export const Container = styled.div`
   display: flex;
-  gap: 0.5rem;
+  gap: ${gap.sm};
   align-items: center;
 `;
