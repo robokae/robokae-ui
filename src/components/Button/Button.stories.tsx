@@ -6,34 +6,53 @@ import { lightTheme, darkTheme } from "../../config/theme";
 const meta: Meta<typeof Button> = {
   component: Button,
   title: "Robokae/Button",
-  argTypes: {},
+  decorators: [
+    (Story, context) => (
+      <ThemeProvider
+        theme={
+          context.parameters.backgrounds?.default === "dark"
+            ? darkTheme
+            : lightTheme
+        }
+      >
+        <Story />
+      </ThemeProvider>
+    ),
+  ],
+  argTypes: {
+    variant: {
+      control: "select",
+      options: ["filled", "outline", "plain"],
+    },
+    rounded: {
+      control: "boolean",
+    },
+    arrow: {
+      control: "boolean",
+    },
+    children: {
+      control: "text",
+      description: "Button text",
+    },
+  },
 };
 
 export default meta;
 
-export const LightTheme = (args) => (
-  <ThemeProvider theme={lightTheme}>
-    <Button data-testid="Button-id" {...args}>
-      Click me
-    </Button>
-  </ThemeProvider>
-);
+const Template = (args) => <Button {...args}>{args.children}</Button>;
 
-LightTheme.args = {
+const defaultArgs = {
   variant: "filled",
+  rounded: false,
+  children: "Click me",
+  arrow: false,
 };
 
-export const DarkTheme = (args) => (
-  <ThemeProvider theme={darkTheme}>
-    <Button data-testid="Button-id" {...args}>
-      Click me
-    </Button>
-  </ThemeProvider>
-);
+export const LightTheme = Template.bind({});
+LightTheme.args = defaultArgs;
 
-DarkTheme.args = {
-  variant: "filled",
-};
+export const DarkTheme = Template.bind({});
+DarkTheme.args = defaultArgs;
 
 DarkTheme.parameters = {
   backgrounds: { default: "dark" },

@@ -30,7 +30,7 @@ export const breakpoint = {
   desktop: "(max-width: 2560px)",
 };
 
-export const icon = {
+export const iconSize = {
   xs: "0.75rem",
   sm: "1rem",
   md: "1.25rem",
