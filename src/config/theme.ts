@@ -15,6 +15,11 @@ export const lightTheme = {
       secondary: "#F8F8F8",
     },
   },
+  input: {
+    background: "#F2F3F3",
+    label: "#6D818F",
+    placeholder: "#8D9FAA",
+  },
   line: "#C5CBD0",
   overlay: "rgba(18, 28, 32, 0.85)",
   boxShadow: "0.5rem 0.5rem 1rem rgba(153, 174, 215, 0.2)",
@@ -35,6 +40,11 @@ export const darkTheme = {
       primary: "#97DBFB",
       secondary: "#121B20",
     },
+  },
+  input: {
+    background: "#11181C",
+    label: "#8D9FAA",
+    placeholder: "#4F5B63",
   },
   accent: "#97DBFB",
   line: "#2D343A",
