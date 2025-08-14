@@ -1,25 +1,9 @@
 import { Meta } from "@storybook/react";
-import { Heading } from "../heading/Heading.styles";
 import CollapsibleCard from "./CollapsibleCard";
-import { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme } from "../../config/theme";
 
 const meta: Meta<typeof CollapsibleCard> = {
   component: CollapsibleCard,
   title: "Robokae/CollapsibleCard",
-  decorators: [
-    (Story, context) => (
-      <ThemeProvider
-        theme={
-          context.parameters.backgrounds?.default === "dark"
-            ? darkTheme
-            : lightTheme
-        }
-      >
-        <Story />
-      </ThemeProvider>
-    ),
-  ],
   argTypes: {
     heading: {
       control: "text",

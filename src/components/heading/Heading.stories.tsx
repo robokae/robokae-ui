@@ -1,24 +1,9 @@
 import { Meta } from "@storybook/react";
 import { Heading } from "./Heading.styles";
-import { ThemeProvider } from "styled-components";
-import { darkTheme, lightTheme } from "../../config/theme";
 
 const meta: Meta<typeof Heading> = {
   component: Heading,
   title: "Robokae/Heading",
-  decorators: [
-    (Story, context) => (
-      <ThemeProvider
-        theme={
-          context.parameters.backgrounds?.default === "dark"
-            ? darkTheme
-            : lightTheme
-        }
-      >
-        <Story />
-      </ThemeProvider>
-    ),
-  ],
 };
 
 export default meta;

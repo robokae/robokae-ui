@@ -1,25 +1,10 @@
 import { Meta } from "@storybook/react";
 import Input from "./Input";
 import { Card } from "../card/Card.styles";
-import { ThemeProvider } from "styled-components";
-import { darkTheme, lightTheme } from "../../config/theme";
 
 const meta: Meta<typeof Input> = {
   component: Input,
   title: "Robokae/Input",
-  decorators: [
-    (Story, context) => (
-      <ThemeProvider
-        theme={
-          context.parameters.backgrounds?.default === "dark"
-            ? darkTheme
-            : lightTheme
-        }
-      >
-        <Story />
-      </ThemeProvider>
-    ),
-  ],
   argTypes: {
     as: {
       control: "select",

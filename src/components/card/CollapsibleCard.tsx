@@ -1,8 +1,9 @@
 import React, { FC, HTMLAttributes, ReactNode, useState } from "react";
 import { Heading } from "../heading/Heading.styles";
 import { Card } from "./Card.styles";
-import { CardHeader, IconContainer } from "./CollapsibleCard.styles";
 import Icon from "../icon/Icon";
+import { useTheme } from "styled-components";
+import { Flex } from "../flex/Flex.styles";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   heading?: string;
@@ -17,15 +18,22 @@ const CollapsibleCard: FC<Props> = ({
   ...rest
 }) => {
   const [showContent, setShowContent] = useState(!collapse);
+  const theme = useTheme();
 
   return (
     <Card {...rest}>
-      <CardHeader onClick={() => setShowContent((prev) => !prev)}>
+      <Flex
+        justifyContent="space-between"
+        alignItems="center"
+        style={{ cursor: "pointer" }}
+        onClick={() => setShowContent((prev) => !prev)}
+      >
         <Heading as="h5">{heading}</Heading>
-        <IconContainer>
-          <Icon name={showContent ? "ChevronUp" : "ChevronDown"} />
-        </IconContainer>
-      </CardHeader>
+        <Icon
+          name={showContent ? "ChevronUp" : "ChevronDown"}
+          color={theme.text.secondary}
+        />
+      </Flex>
       {showContent && children}
     </Card>
   );

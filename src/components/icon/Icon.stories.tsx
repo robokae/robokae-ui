@@ -1,24 +1,9 @@
 import { Meta } from "@storybook/react";
 import Icon from "./Icon";
-import { ThemeProvider } from "styled-components";
-import { darkTheme, lightTheme } from "../../config/theme";
 
 const meta: Meta<typeof Icon> = {
   component: Icon,
   title: "Robokae/Icon",
-  decorators: [
-    (Story, context) => (
-      <ThemeProvider
-        theme={
-          context.parameters.backgrounds?.default === "dark"
-            ? darkTheme
-            : lightTheme
-        }
-      >
-        <Story />
-      </ThemeProvider>
-    ),
-  ],
   argTypes: {
     name: {
       control: "select",

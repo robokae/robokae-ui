@@ -1,24 +1,9 @@
 import { Meta } from "@storybook/react";
 import Button from "./Button";
-import { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme } from "../../config/theme";
 
 const meta: Meta<typeof Button> = {
   component: Button,
   title: "Robokae/Button",
-  decorators: [
-    (Story, context) => (
-      <ThemeProvider
-        theme={
-          context.parameters.backgrounds?.default === "dark"
-            ? darkTheme
-            : lightTheme
-        }
-      >
-        <Story />
-      </ThemeProvider>
-    ),
-  ],
   argTypes: {
     variant: {
       control: "select",
