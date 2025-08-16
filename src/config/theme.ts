@@ -20,6 +20,10 @@ export const lightTheme = {
     label: "#6D818F",
     placeholder: "#8D9FAA",
   },
+  tooltip: {
+    background: "#52606B",
+    foreground: "#EBEDEF",
+  },
   line: "#C5CBD0",
   overlay: "rgba(18, 28, 32, 0.85)",
   boxShadow: "0.5rem 0.5rem 1rem rgba(153, 174, 215, 0.2)",
@@ -45,6 +49,10 @@ export const darkTheme = {
     background: "#11181C",
     label: "#8D9FAA",
     placeholder: "#4F5B63",
+  },
+  tooltip: {
+    background: "#2F3A44",
+    foreground: "#F8F8F8",
   },
   accent: "#97DBFB",
   line: "#2D343A",
