@@ -1,10 +1,10 @@
-import React, { FC } from "react";
+import React, { FC, HTMLAttributes } from "react";
 import * as bootstrapIcons from "react-bootstrap-icons";
 import { iconSize } from "../../constants";
 import { useTheme } from "styled-components";
 import Flex from "../flex";
 
-interface Props {
+interface Props extends HTMLAttributes<HTMLDivElement> {
   name: keyof typeof bootstrapIcons;
   size?: keyof typeof iconSize;
   color?: string;
