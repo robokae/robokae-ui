@@ -1,7 +1,7 @@
 import { Meta } from "@storybook/react";
-import { Flex } from "./Flex.styles";
-import { Card } from "../card/Card.styles";
 import { useTheme } from "styled-components";
+import Flex from "./Flex";
+import Card from "../card";
 
 const meta: Meta<typeof Flex> = {
   component: Flex,

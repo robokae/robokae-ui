@@ -1,20 +1,7 @@
 import styled from "styled-components";
+import { FlexProps } from "./Flex.types";
 
-interface Props {
-  direction?: "row" | "column";
-  justifyContent?:
-    | "flex-start"
-    | "center"
-    | "flex-end"
-    | "space-between"
-    | "space-around"
-    | "space-evenly";
-  alignItems?: "flex-start" | "center" | "flex-end" | "stretch" | "baseline";
-  wrap?: "nowrap" | "wrap" | "wrap-reverse";
-  gap?: string;
-}
-
-export const Flex = styled.div<Props>`
+export const Container = styled.div<FlexProps>`
   display: flex;
   flex-direction: ${({ direction = "row" }) => direction};
   justify-content: ${({ justifyContent = "flex-start" }) => justifyContent};
