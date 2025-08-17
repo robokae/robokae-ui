@@ -1,14 +1,15 @@
 import { Meta } from "@storybook/react";
-import { Heading } from "./Heading.styles";
+import Heading from "./Heading";
+import { HeadingTag } from "./Heading.types";
 
 const meta: Meta<typeof Heading> = {
   component: Heading,
-  title: "Robokae/Heading",
+  title: "Heading",
 };
 
 export default meta;
 
-const tags = ["h1", "h2", "h3", "h4", "h5"];
+const tags: HeadingTag[] = ["h1", "h2", "h3", "h4", "h5"];
 
 const Template = () => (
   <>

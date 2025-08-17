@@ -1,15 +1,8 @@
 import { breakpoint, typography } from "../../constants";
 import styled from "styled-components";
+import { HeadingProps, HeadingTag } from "./Heading.types";
 
-type HeadingTag = "h1" | "h2" | "h3" | "h4" | "h5";
-
-interface Props {
-  as?: HeadingTag;
-  weight?: keyof typeof typography.fontWeight;
-  color?: string;
-}
-
-export const Heading = styled.h1<Props>`
+export const Container = styled.h1<HeadingProps>`
   font-weight: ${({ weight }) => typography.fontWeight[weight || "bold"]};
   font-size: ${({ as = "h1" }) =>
     typography.fontSize.heading[as as HeadingTag]?.lg ||
