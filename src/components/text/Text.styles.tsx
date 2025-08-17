@@ -1,14 +1,9 @@
 import styled from "styled-components";
+import { TextProps } from "./Text.types";
 
-interface Props {
-  bold?: boolean;
-  underline?: boolean;
-  italic?: boolean;
-  transform: "capitalize" | "uppercase" | "lowercase" | "none";
-  color?: string;
-}
-
-export const Text = styled.p<Props>`
+export const Container = styled.p<TextProps>`
+  margin: 0;
+  padding: 0;
   font-weight: ${({ bold }) => (bold ? "bold" : "normal")};
   text-decoration: ${({ underline }) => (underline ? "underline" : "none")};
   font-style: ${({ italic }) => (italic ? "italic" : "normal")};

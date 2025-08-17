@@ -3,7 +3,7 @@ import Icon from "./Icon";
 
 const meta: Meta<typeof Icon> = {
   component: Icon,
-  title: "Robokae/Icon",
+  title: "Icon",
   argTypes: {
     name: {
       control: "select",

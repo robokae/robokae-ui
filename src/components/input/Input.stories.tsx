@@ -1,10 +1,10 @@
 import { Meta } from "@storybook/react";
 import Input from "./Input";
-import { Card } from "../card/Card.styles";
+import Card from "../card";
 
 const meta: Meta<typeof Input> = {
   component: Input,
-  title: "Robokae/Input",
+  title: "Input",
   argTypes: {
     as: {
       control: "select",

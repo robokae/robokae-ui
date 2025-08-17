@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import * as bootstrapIcons from "react-bootstrap-icons";
 import { iconSize } from "../../constants";
-import { Flex } from "../flex/Flex.styles";
 import { useTheme } from "styled-components";
+import Flex from "../flex";
 
 interface Props {
   name: keyof typeof bootstrapIcons;

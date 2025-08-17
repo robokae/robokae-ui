@@ -1,9 +1,9 @@
 import { Meta } from "@storybook/react";
-import { Text } from "./Text.styles";
+import Text from "./Text";
 
 const meta: Meta<typeof Text> = {
   component: Text,
-  title: "Robokae/Text",
+  title: "Text",
   argTypes: {
     bold: {
       control: "boolean",
