@@ -1,12 +1,27 @@
-import React, { FC, HTMLAttributes, ReactNode } from "react";
+import React, { FC, HTMLAttributes, PropsWithChildren, ReactNode } from "react";
 import { Container } from "./Card.styles";
+import Heading from "../heading";
+import { HeadingProps } from "../heading/Heading.types";
 
-interface CardProps extends HTMLAttributes<HTMLDivElement> {
-  children: ReactNode;
+function Card({
+  children,
+  ...rest
+}: PropsWithChildren<HTMLAttributes<HTMLDivElement>>) {
+  return <Container {...rest}>{children}</Container>;
 }
 
-const Card: FC<CardProps> = ({ children, ...rest }) => (
-  <Container {...rest}>{children}</Container>
-);
+Card.Heading = function ({ as = "h5", children, ...rest }: HeadingProps) {
+  return (
+    <Heading as={as} {...rest}>
+      {children}
+    </Heading>
+  );
+};
+
+Card.Content = function ({
+  children,
+}: PropsWithChildren<HTMLAttributes<HTMLDivElement>>) {
+  return children;
+};
 
 export default Card;
