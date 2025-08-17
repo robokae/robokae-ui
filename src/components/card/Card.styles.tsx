@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { borderRadius, padding, gap } from "../../constants";
-import { Flex } from "../flex/Flex.styles";
+import Flex from "../flex";
 
-export const Card = styled(Flex)`
+export const Container = styled(Flex)`
   flex-direction: column;
   padding: ${padding.md};
   border-radius: ${borderRadius.md};

@@ -1,11 +1,11 @@
 import { Meta } from "@storybook/react";
-import { Card } from "./Card.styles";
-import { Heading } from "../heading/Heading.styles";
-import Button from "../button/Button";
+import Button from "../button";
+import Heading from "../heading";
+import Card from "./Card";
 
 const meta: Meta<typeof Card> = {
   component: Card,
-  title: "Robokae/Card",
+  title: "Card",
 };
 
 export default meta;
