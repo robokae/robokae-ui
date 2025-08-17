@@ -1,4 +1,3 @@
-import { darken } from "polished";
 import styled, { css } from "styled-components";
 import { borderRadius, gap } from "../../constants";
 
@@ -19,15 +18,15 @@ const baseStyles = css`
   }
 `;
 
-const roundedStyle = css<{ rounded?: boolean }>`
-  ${({ rounded }) =>
-    rounded &&
+const roundedStyle = css<{ $rounded?: boolean }>`
+  ${({ $rounded }) =>
+    $rounded &&
     css`
       border-radius: ${borderRadius.pill};
     `}
 `;
 
-export const FilledButton = styled.button<{ rounded?: boolean }>`
+export const FilledButton = styled.button<{ $rounded?: boolean }>`
   ${baseStyles};
   ${roundedStyle};
   color: ${({ theme }) => theme.button.foreground.secondary};
@@ -42,7 +41,7 @@ export const FilledButton = styled.button<{ rounded?: boolean }>`
   }
 `;
 
-export const OutlinedButton = styled.button<{ rounded?: boolean }>`
+export const OutlinedButton = styled.button<{ $rounded?: boolean }>`
   ${baseStyles};
   ${roundedStyle};
   border: 1px solid ${({ theme }) => theme.button.foreground.primary};

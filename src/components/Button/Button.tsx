@@ -35,7 +35,7 @@ const Button: FC<Props> = ({
     case "filled":
       return (
         <FilledButton
-          rounded={rounded}
+          $rounded={rounded}
           disabled={disabled}
           onClick={onClick}
           {...rest}
@@ -46,7 +46,7 @@ const Button: FC<Props> = ({
     case "outline":
       return (
         <OutlinedButton
-          rounded={rounded}
+          $rounded={rounded}
           disabled={disabled}
           onClick={onClick}
           {...rest}
