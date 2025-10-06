@@ -1,4 +1,4 @@
-import { Meta } from "@storybook/react";
+import { Meta } from "@storybook/react-webpack5";
 import Tooltip from "./Tooltip";
 import Card from "../card";
 import Flex from "../flex";

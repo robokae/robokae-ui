@@ -1,4 +1,4 @@
-import { Meta } from "@storybook/react";
+import { Meta } from "@storybook/react-webpack5";
 import { useTheme } from "styled-components";
 import Flex from "./Flex";
 import Card from "../card";

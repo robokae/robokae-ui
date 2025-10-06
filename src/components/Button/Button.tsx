@@ -7,7 +7,7 @@ import {
   PlainButton,
 } from "./Button.styles";
 
-interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "filled" | "outline" | "plain";
   rounded?: boolean;
   arrow?: boolean;

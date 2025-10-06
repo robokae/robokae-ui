@@ -1,5 +1,5 @@
-import { Meta } from "@storybook/react";
-import Button from "./Button";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
+import Button, { Props } from "./Button";
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -24,9 +24,11 @@ const meta: Meta<typeof Button> = {
 
 export default meta;
 
-const Template = (args) => <Button {...args}>{args.children}</Button>;
+const Template: StoryFn<typeof Button> = (args) => (
+  <Button {...args}>{args.children}</Button>
+);
 
-const defaultArgs = {
+const defaultArgs: Partial<Props> = {
   variant: "filled",
   rounded: false,
   children: "Click me",
