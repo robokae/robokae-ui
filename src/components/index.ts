@@ -1,9 +1,9 @@
-export * from "./button";
-export * from "./card";
-export * from "./collapsible";
-export * from "./flex";
-export * from "./heading";
-export * from "./icon";
-export * from "./input";
-export * from "./text";
-export * from "./tooltip";
+export { default as Button } from "./button";
+export { default as Card } from "./card";
+export { default as Collapsible } from "./collapsible";
+export { default as Flex } from "./flex";
+export { default as Heading } from "./heading";
+export { default as Icon } from "./icon";
+export { default as Input } from "./input";
+export { default as Text } from "./text";
+export { default as Tooltip } from "./tooltip";
