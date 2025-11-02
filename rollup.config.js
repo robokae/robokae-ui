@@ -4,8 +4,9 @@ import typescript from "@rollup/plugin-typescript";
 import json from "@rollup/plugin-json";
 import { dts } from "rollup-plugin-dts";
 import PeerDepsExternalPlugin from "rollup-plugin-peer-deps-external";
-import { terser } from "rollup-plugin-terser";
 import { createFilter } from "@rollup/pluginutils";
+import terser from "@rollup/plugin-terser";
+import path from "path";
 
 const packageJson = require("./package.json");
 
@@ -19,18 +20,28 @@ export default [
         file: packageJson.main,
         format: "cjs",
         sourcemap: true,
+        sourcemapPathTransform: (sourcePath) =>
+          path.relative(process.cwd(), sourcePath).replace(/\\/g, "/"),
       },
       {
         file: packageJson.module,
         format: "esm",
         sourcemap: true,
+        sourcemapPathTransform: (sourcePath) =>
+          path.relative(process.cwd(), sourcePath).replace(/\\/, "/"),
       },
     ],
     plugins: [
       PeerDepsExternalPlugin(),
       resolve(),
       commonjs(),
-      typescript({ tsconfig: "./tsconfig.json" }),
+      typescript({
+        tsconfig: "./tsconfig.json",
+        compilerOptions: {
+          sourceMap: true,
+          inlineSources: false,
+        },
+      }),
       json(),
       terser(),
       {
@@ -43,7 +54,10 @@ export default [
         },
       },
     ],
-    external: ["react", "react-dom", "styled-components"],
+    external: [
+      ...Object.keys(packageJson.peerDependencies || {}),
+      ...Object.keys(packageJson.dependencies || {}),
+    ],
   },
   {
     input: "src/index.ts",
