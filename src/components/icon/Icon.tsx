@@ -1,4 +1,4 @@
-import React, { FC, HTMLAttributes } from "react";
+import React, { type FC, type HTMLAttributes } from "react";
 import * as bootstrapIcons from "react-bootstrap-icons";
 import { iconSize } from "../../constants";
 import { useTheme } from "styled-components";

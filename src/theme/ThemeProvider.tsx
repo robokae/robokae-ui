@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import React, { type PropsWithChildren } from "react";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./theme";
 

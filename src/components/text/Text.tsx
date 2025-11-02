@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { TextProps } from "./Text.types";
+import { type FC } from "react";
+import { type TextProps } from "./Text.types";
 import { Container } from "./Text.styles";
 import React from "react";
 

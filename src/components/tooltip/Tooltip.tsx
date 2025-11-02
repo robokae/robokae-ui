@@ -1,4 +1,9 @@
-import React, { FC, HTMLAttributes, ReactNode, useState } from "react";
+import React, {
+  type FC,
+  type HTMLAttributes,
+  type ReactNode,
+  useState,
+} from "react";
 import { Container, Trigger } from "./Tooltip.styles";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {

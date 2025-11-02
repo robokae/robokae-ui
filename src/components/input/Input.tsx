@@ -1,4 +1,4 @@
-import React, { forwardRef, InputHTMLAttributes, Ref } from "react";
+import React, { forwardRef, type InputHTMLAttributes, type Ref } from "react";
 import { Label, TextareaInput, TextInput } from "./Input.styles";
 import Flex from "../flex";
 

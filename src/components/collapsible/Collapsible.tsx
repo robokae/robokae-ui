@@ -1,8 +1,7 @@
 import React, {
   createContext,
-  HTMLAttributes,
-  PropsWithChildren,
-  ReactNode,
+  type HTMLAttributes,
+  type PropsWithChildren,
   useContext,
   useEffect,
   useRef,
@@ -12,7 +11,7 @@ import { useTheme } from "styled-components";
 import Flex from "../flex";
 import Icon from "../icon";
 import Heading from "../heading";
-import { HeadingProps } from "../heading/Heading.types";
+import { type HeadingProps } from "../heading/Heading.types";
 import { gap } from "../../constants";
 
 interface CollapsibleContext {

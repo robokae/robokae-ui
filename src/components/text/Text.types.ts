@@ -1,4 +1,4 @@
-import { HTMLAttributes } from "react";
+import { type HTMLAttributes } from "react";
 
 export interface TextProps extends HTMLAttributes<HTMLParagraphElement> {
   bold?: boolean;

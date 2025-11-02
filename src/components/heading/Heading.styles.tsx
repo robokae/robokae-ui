@@ -1,6 +1,6 @@
 import { breakpoint, typography } from "../../constants";
 import styled from "styled-components";
-import { HeadingProps, HeadingTag } from "./Heading.types";
+import { type HeadingProps, type HeadingTag } from "./Heading.types";
 
 export const Container = styled.h1<HeadingProps>`
   font-weight: ${({ weight }) => typography.fontWeight[weight || "bold"]};

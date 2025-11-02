@@ -1,7 +1,7 @@
-import React, { FC, HTMLAttributes, PropsWithChildren, ReactNode } from "react";
+import React, { type HTMLAttributes, type PropsWithChildren } from "react";
 import { Container } from "./Card.styles";
 import Heading from "../heading";
-import { HeadingProps } from "../heading/Heading.types";
+import { type HeadingProps } from "../heading/Heading.types";
 
 function Card({
   children,

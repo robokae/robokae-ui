@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes, FC } from "react";
+import React, { type ButtonHTMLAttributes, type FC } from "react";
 import { ArrowRight } from "react-bootstrap-icons";
 import {
   Container,

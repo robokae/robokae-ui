@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { TextProps } from "./Text.types";
+import { type TextProps } from "./Text.types";
 
 export const Container = styled.p<TextProps>`
   margin: 0;
