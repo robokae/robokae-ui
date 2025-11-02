@@ -9,10 +9,19 @@ export const lightTheme = {
   },
   accent: "#6F8FA6",
   button: {
-    background: "#6F8FA6",
-    foreground: {
-      primary: "#6F8FA6",
-      secondary: "#F8F8F8",
+    primary: {
+      background: "#29353D",
+      foreground: {
+        primary: "#F8F8F8",
+        secondary: "#29353D",
+      },
+    },
+    accent: {
+      background: "#6F8FA6",
+      foreground: {
+        primary: "#F8F8F8",
+        secondary: "#6F8FA6",
+      },
     },
   },
   input: {
@@ -39,10 +48,19 @@ export const darkTheme = {
     secondary: "#758392",
   },
   button: {
-    background: "#97DBFB",
-    foreground: {
-      primary: "#97DBFB",
-      secondary: "#121B20",
+    primary: {
+      background: "#2C3C47",
+      foreground: {
+        primary: "#F8F8F8",
+        secondary: "#728999",
+      },
+    },
+    accent: {
+      background: "#97DBFB",
+      foreground: {
+        primary: "#121B20",
+        secondary: "#97DBFB",
+      },
     },
   },
   input: {

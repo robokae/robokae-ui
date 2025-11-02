@@ -9,10 +9,19 @@ declare module "styled-components" {
     };
     boxShadow: string;
     button: {
-      background: string;
-      foreground: {
-        primary: string;
-        secondary: string;
+      primary: {
+        background: string;
+        foreground: {
+          primary: string;
+          secondary: string;
+        };
+      };
+      accent: {
+        background: string;
+        foreground: {
+          primary: string;
+          secondary: string;
+        };
       };
     };
     input: {

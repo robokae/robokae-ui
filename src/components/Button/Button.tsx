@@ -9,12 +9,14 @@ import {
 
 export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "filled" | "outline" | "plain";
+  colorScheme?: "primary" | "accent";
   rounded?: boolean;
   arrow?: boolean;
 }
 
 const Button: FC<Props> = ({
   variant = "plain",
+  colorScheme = "primary",
   rounded = false,
   arrow = false,
   disabled = false,
@@ -35,6 +37,7 @@ const Button: FC<Props> = ({
     case "filled":
       return (
         <FilledButton
+          $colorScheme={colorScheme}
           $rounded={rounded}
           disabled={disabled}
           onClick={onClick}
@@ -46,6 +49,7 @@ const Button: FC<Props> = ({
     case "outline":
       return (
         <OutlinedButton
+          $colorScheme={colorScheme}
           $rounded={rounded}
           disabled={disabled}
           onClick={onClick}
@@ -56,7 +60,12 @@ const Button: FC<Props> = ({
       );
     default:
       return (
-        <PlainButton onClick={onClick} disabled={disabled} {...rest}>
+        <PlainButton
+          $colorScheme={colorScheme}
+          onClick={onClick}
+          disabled={disabled}
+          {...rest}
+        >
           {content}
         </PlainButton>
       );

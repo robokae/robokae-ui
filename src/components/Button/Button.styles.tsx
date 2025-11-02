@@ -3,9 +3,8 @@ import { borderRadius, gap } from "../../constants";
 
 const baseStyles = css`
   padding: 0.5rem 1rem;
-  border: transparent;
+  border: none;
   outline: none;
-  color: ${({ theme }) => theme.accent};
   background-color: transparent;
   border-radius: ${borderRadius.sm};
   cursor: pointer;
@@ -26,11 +25,16 @@ const roundedStyle = css<{ $rounded?: boolean }>`
     `}
 `;
 
-export const FilledButton = styled.button<{ $rounded?: boolean }>`
+export const FilledButton = styled.button<{
+  $colorScheme: string;
+  $rounded?: boolean;
+}>`
   ${baseStyles};
   ${roundedStyle};
-  color: ${({ theme }) => theme.button.foreground.secondary};
-  background-color: ${({ theme }) => theme.button.background};
+  color: ${({ theme, $colorScheme }) =>
+    (theme.button as any)[$colorScheme].foreground.primary};
+  background-color: ${({ theme, $colorScheme }) =>
+    (theme.button as any)[$colorScheme].background};
 
   &:hover {
     background-image: linear-gradient(
@@ -41,19 +45,31 @@ export const FilledButton = styled.button<{ $rounded?: boolean }>`
   }
 `;
 
-export const OutlinedButton = styled.button<{ $rounded?: boolean }>`
+export const OutlinedButton = styled.button<{
+  $colorScheme: string;
+  $rounded?: boolean;
+}>`
   ${baseStyles};
   ${roundedStyle};
-  border: 1px solid ${({ theme }) => theme.button.foreground.primary};
+  border: 1px solid
+    ${({ theme, $colorScheme }) =>
+      (theme.button as any)[$colorScheme].background.primary};
+  color: ${({ theme, $colorScheme }) =>
+    (theme.button as any)[$colorScheme].foreground.secondary};
 
   &:hover {
-    background-color: ${({ theme }) => theme.button.background};
-    color: ${({ theme }) => theme.button.foreground.secondary};
+    border-color: transparent;
+    background-color: ${({ theme, $colorScheme }) =>
+      (theme.button as any)[$colorScheme].background};
+    color: ${({ theme, $colorScheme }) =>
+      (theme.button as any)[$colorScheme].foreground.primary};
   }
 `;
 
-export const PlainButton = styled.button`
+export const PlainButton = styled.button<{ $colorScheme: string }>`
   ${baseStyles};
+  color: ${({ theme, $colorScheme }) =>
+    (theme.button as any)[$colorScheme].foreground.secondary};
 `;
 
 export const Container = styled.div`
