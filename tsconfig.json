@@ -4,13 +4,16 @@
         "forceConsistentCasingInFileNames": true,
         "target": "ESNext",
         "module": "ESNext",
-        "declaration": true,
-        "declarationMap": true,
+        "declaration": true, // Generate .d.ts files
+        "declarationMap": true, // Generate .d.ts.map files
         "outDir": "dist",
         "strict": true,
         "jsx": "react",
         "esModuleInterop": true,
-        "skipLibCheck": true,
+        "skipLibCheck": true, // Don't check type definitions in node_modules
+        "sourceMap": true, // Generate .map files
+        "inlineSources": true, // Add source content to .map files
+        "verbatimModuleSyntax": true
     },
     "include": ["src/**/*"],
     "exclude": [

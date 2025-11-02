@@ -1,16 +1,16 @@
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
-import typescript from "@rollup/plugin-typescript";
 import json from "@rollup/plugin-json";
 import { dts } from "rollup-plugin-dts";
-import PeerDepsExternalPlugin from "rollup-plugin-peer-deps-external";
 import { createFilter } from "@rollup/pluginutils";
 import terser from "@rollup/plugin-terser";
 import path from "path";
+import typescript from "rollup-plugin-typescript2";
+import PeerDepsExternalPlugin from "rollup-plugin-peer-deps-external";
 
 const packageJson = require("./package.json");
 
-const excludeStories = createFilter(["**/*.stories.*"], { resolve: false });
+const excludeStories = createFilter(["**/*.stories.*"]);
 
 export default [
   {
@@ -37,10 +37,7 @@ export default [
       commonjs(),
       typescript({
         tsconfig: "./tsconfig.json",
-        compilerOptions: {
-          sourceMap: true,
-          inlineSources: false,
-        },
+        useTsconfigDeclarationDir: true,
       }),
       json(),
       terser(),
@@ -50,13 +47,15 @@ export default [
           if (typeof id === "string" && excludeStories(id)) {
             return null;
           }
-          return null;
+          return undefined;
         },
       },
     ],
     external: [
       ...Object.keys(packageJson.peerDependencies || {}),
       ...Object.keys(packageJson.dependencies || {}),
+      "react",
+      "@types/react",
     ],
   },
   {
