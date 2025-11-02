@@ -1,12 +1,13 @@
 {
   "name": "@robokae/robokae-ui",
-  "version": "1.0.12",
+  "version": "1.0.20",
   "description": "Custom React component library",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/types.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "repository": {
     "type": "git",

@@ -4,13 +4,25 @@ import json from "@rollup/plugin-json";
 import { dts } from "rollup-plugin-dts";
 import { createFilter } from "@rollup/pluginutils";
 import terser from "@rollup/plugin-terser";
-import path from "path";
 import typescript from "rollup-plugin-typescript2";
 import PeerDepsExternalPlugin from "rollup-plugin-peer-deps-external";
 
 const packageJson = require("./package.json");
 
 const excludeStories = createFilter(["**/*.stories.*"]);
+
+const replaceSourceExtensions = () => ({
+  name: "replace-source-extensions",
+  renderChunk(code, chunk, options) {
+    if (chunk.map) {
+      chunk.map.sources = chunk.map.sources.map((source) =>
+        source.replace(/\.tsx$/, ".ts")
+      );
+    }
+
+    return { code, map: chunk.map };
+  },
+});
 
 export default [
   {
@@ -20,15 +32,11 @@ export default [
         file: packageJson.main,
         format: "cjs",
         sourcemap: true,
-        sourcemapPathTransform: (sourcePath) =>
-          path.relative(process.cwd(), sourcePath).replace(/\\/g, "/"),
       },
       {
         file: packageJson.module,
         format: "esm",
         sourcemap: true,
-        sourcemapPathTransform: (sourcePath) =>
-          path.relative(process.cwd(), sourcePath).replace(/\\/, "/"),
       },
     ],
     plugins: [
@@ -40,6 +48,7 @@ export default [
         useTsconfigDeclarationDir: true,
       }),
       json(),
+      replaceSourceExtensions(),
       terser(),
       {
         name: "exclude-stories",
