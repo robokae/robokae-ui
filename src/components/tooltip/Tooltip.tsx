@@ -11,7 +11,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
 }
 
-const Tooltip: FC<Props> = ({ content, position = "right", children }) => {
+const Tooltip: FC<Props> = ({ content, position = "bottom", children }) => {
   const [display, setDisplay] = useState(false);
 
   return (

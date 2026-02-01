@@ -2,7 +2,10 @@ import styled, { css } from "styled-components";
 
 export const Trigger = styled.span`
   position: relative;
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Container = styled.div<{
