@@ -7,3 +7,6 @@ export { default as Icon } from "./icon";
 export { default as Input } from "./input";
 export { default as Text } from "./text";
 export { default as Tooltip } from "./tooltip";
+export { default as Modal } from "./modal";
+export { default as Overlay } from "./overlay";
+export { GlobalStyle } from "./GlobalStyle";
