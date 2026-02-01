@@ -79,3 +79,7 @@ export const darkTheme = {
   overlay: "rgba(15, 20, 22, 0.85)",
   boxShadow: "0.25rem 0.25rem 1rem rgba(2, 10, 18, 0.2)",
 };
+
+export const getTheme = (theme: "light" | "dark") => {
+  return theme === "light" ? lightTheme : darkTheme;
+};
