@@ -1,6 +1,6 @@
 import { Meta } from "@storybook/react-webpack5";
-import Input from "./Input";
-import Card from "../card";
+import Input from "../components/input/Input";
+import Card from "../components/card";
 
 const meta: Meta<typeof Input> = {
   component: Input,

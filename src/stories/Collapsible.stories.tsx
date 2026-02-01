@@ -1,7 +1,7 @@
 import { Meta } from "@storybook/react-webpack5";
-import Collapsible from "./Collapsible";
-import Card from "../card";
-import Flex from "../flex";
+import Collapsible from "../components/collapsible/Collapsible";
+import Card from "../components/card";
+import Flex from "../components/flex";
 
 const meta: Meta<typeof Collapsible> = {
   component: Collapsible,

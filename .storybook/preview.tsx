@@ -2,43 +2,26 @@ import { Preview } from "@storybook/react";
 import { GlobalStyle } from "../src/components/GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "../src/theme/theme";
+import { withThemeFromJSXProvider } from "@storybook/addon-themes";
 
 const preview: Preview = {
   decorators: [
-    (Story, context) => (
-      <ThemeProvider
-        theme={
-          context.parameters.backgrounds?.default === "dark"
-            ? darkTheme
-            : lightTheme
-        }
-      >
-        <GlobalStyle />
-        <Story />
-      </ThemeProvider>
-    ),
-  ],
-  parameters: {
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/,
+    withThemeFromJSXProvider({
+      themes: {
+        light: lightTheme,
+        dark: darkTheme,
       },
+      defaultTheme: "light",
+      Provider: ThemeProvider,
+      GlobalStyles: GlobalStyle,
+    }),
+    (Story, context) => {
+      const background =
+        context.globals.theme === "dark" ? "#11191F" : "#F0F1F2";
+      document.body.style.backgroundColor = background;
+      return Story();
     },
-    backgrounds: {
-      default: "light",
-      values: [
-        {
-          name: "light",
-          value: "#F0F1F2",
-        },
-        {
-          name: "dark",
-          value: "#11191F",
-        },
-      ],
-    },
-  },
+  ],
 };
 
 export default preview;

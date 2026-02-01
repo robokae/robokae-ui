@@ -1,5 +1,5 @@
 import { Meta } from "@storybook/react-webpack5";
-import Text from "./Text";
+import Text from "../components/text/Text";
 
 const meta: Meta<typeof Text> = {
   component: Text,
