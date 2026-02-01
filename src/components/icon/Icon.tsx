@@ -20,7 +20,10 @@ const Icon: FC<Props> = ({ name, size = "sm", color, ...props }) => {
 
   return (
     <Flex alignItems="center" {...props}>
-      <BootstrapIcon size={iconSize[size]} color={color || theme.accent} />
+      <BootstrapIcon
+        size={iconSize[size]}
+        color={color || theme.text.primary}
+      />
     </Flex>
   );
 };

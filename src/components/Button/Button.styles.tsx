@@ -68,8 +68,8 @@ export const OutlinedButton = styled.button<{
 
 export const PlainButton = styled.button<{ $colorScheme: string }>`
   ${baseStyles};
-  color: ${({ theme, $colorScheme }) =>
-    (theme.button as any)[$colorScheme].foreground.secondary};
+  padding: 0;
+  color: ${({ theme }) => theme.text.primary};
 `;
 
 export const Container = styled.div`

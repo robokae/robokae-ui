@@ -23,6 +23,7 @@ declare module "styled-components" {
           secondary: string;
         };
       };
+      hover: string;
     };
     input: {
       background: string;

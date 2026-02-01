@@ -23,6 +23,7 @@ export const lightTheme = {
         secondary: "#6F8FA6",
       },
     },
+    hover: "#E4E9EB",
   },
   input: {
     background: "#F2F3F3",
@@ -62,6 +63,7 @@ export const darkTheme = {
         secondary: "#97DBFB",
       },
     },
+    hover: "#222D33",
   },
   input: {
     background: "#11181C",
