@@ -6,12 +6,16 @@ import React, {
 } from "react";
 import { Container, Trigger } from "./Tooltip.styles";
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
+export interface TooltipProps extends HTMLAttributes<HTMLDivElement> {
   position?: "top" | "bottom" | "left" | "right";
   children: ReactNode;
 }
 
-const Tooltip: FC<Props> = ({ content, position = "bottom", children }) => {
+const Tooltip: FC<TooltipProps> = ({
+  content,
+  position = "bottom",
+  children,
+}) => {
   const [display, setDisplay] = useState(false);
 
   return (

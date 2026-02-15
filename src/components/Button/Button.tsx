@@ -7,14 +7,14 @@ import {
   PlainButton,
 } from "./Button.styles";
 
-export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "filled" | "outline" | "plain";
   colorScheme?: "primary" | "accent";
   rounded?: boolean;
   arrow?: boolean;
 }
 
-const Button: FC<Props> = ({
+const Button: FC<ButtonProps> = ({
   variant = "plain",
   colorScheme = "primary",
   rounded = false,

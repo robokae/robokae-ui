@@ -4,11 +4,12 @@ import * as bootstrapIcons from "react-bootstrap-icons";
 import Icon from "../icon";
 import { StyledButton } from "./IconButton.styles";
 
-interface IconProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IconButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
   name: keyof typeof bootstrapIcons;
 }
 
-const IconButton: FC<IconProps> = ({ name, ...props }) => {
+const IconButton: FC<IconButtonProps> = ({ name, ...props }) => {
   return (
     <StyledButton {...props}>
       <Icon name={name} />

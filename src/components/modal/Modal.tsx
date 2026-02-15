@@ -5,7 +5,8 @@ import { ModalProvider, useModalContext } from "./ModalContext";
 import IconButton from "../button/IconButton";
 import Heading from "../heading";
 
-interface ModalProps extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {
+export interface ModalProps
+  extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {
   overlay?: boolean;
 }
 

@@ -4,13 +4,13 @@ import { iconSize } from "../../constants";
 import { useTheme } from "styled-components";
 import Flex from "../flex";
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
+export interface IconProps extends HTMLAttributes<HTMLDivElement> {
   name: keyof typeof bootstrapIcons;
   size?: keyof typeof iconSize;
   color?: string;
 }
 
-const Icon: FC<Props> = ({ name, size = "sm", color, ...props }) => {
+const Icon: FC<IconProps> = ({ name, size = "sm", color, ...props }) => {
   const theme = useTheme();
 
   const BootstrapIcon = bootstrapIcons[name];
