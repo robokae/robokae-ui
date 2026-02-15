@@ -2,7 +2,7 @@ import React, { type FC, type HTMLAttributes } from "react";
 import * as bootstrapIcons from "react-bootstrap-icons";
 import { iconSize } from "../../constants";
 import { useTheme } from "styled-components";
-import Flex from "../flex";
+import { Flex } from "../flex";
 
 export interface IconProps extends HTMLAttributes<HTMLDivElement> {
   name: keyof typeof bootstrapIcons;

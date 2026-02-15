@@ -2,8 +2,8 @@ import React, { type HTMLAttributes, type PropsWithChildren } from "react";
 import { Container, Header, Popup } from "./Modal.styles";
 import Overlay from "../overlay/Overlay";
 import { ModalProvider, useModalContext } from "./ModalContext";
-import IconButton from "../button/IconButton";
-import Heading from "../heading";
+import { Heading } from "../heading";
+import { IconButton } from "../button";
 
 export interface ModalProps
   extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {

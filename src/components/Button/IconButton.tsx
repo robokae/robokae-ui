@@ -1,8 +1,8 @@
 import React from "react";
 import type { ButtonHTMLAttributes, FC } from "react";
 import * as bootstrapIcons from "react-bootstrap-icons";
-import Icon from "../icon";
 import { StyledButton } from "./IconButton.styles";
+import { Icon } from "../icon";
 
 export interface IconButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {

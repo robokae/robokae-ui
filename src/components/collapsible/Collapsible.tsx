@@ -8,11 +8,11 @@ import React, {
   useState,
 } from "react";
 import { useTheme } from "styled-components";
-import Flex from "../flex";
-import Icon from "../icon";
-import Heading from "../heading";
 import { type HeadingProps } from "../heading/Heading.types";
 import { gap } from "../../constants";
+import { Flex } from "../flex";
+import { Heading } from "../heading";
+import { Icon } from "../icon";
 
 interface CollapsibleContext {
   isCollapsed: boolean;
@@ -21,7 +21,7 @@ interface CollapsibleContext {
 }
 
 export const CollapsibleContext = createContext<CollapsibleContext | undefined>(
-  undefined
+  undefined,
 );
 
 export const useCollapsibleContext = () => {
@@ -29,7 +29,7 @@ export const useCollapsibleContext = () => {
 
   if (!context) {
     throw new Error(
-      "useCollapsibleContext must be used within a CollapsibleContext.Provider"
+      "useCollapsibleContext must be used within a CollapsibleContext.Provider",
     );
   }
 

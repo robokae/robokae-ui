@@ -1,7 +1,7 @@
 import React, { type HTMLAttributes, type PropsWithChildren } from "react";
 import { Container } from "./Card.styles";
-import Heading from "../heading";
 import { type HeadingProps } from "../heading/Heading.types";
+import { Heading } from "../heading";
 
 function Card({
   children,

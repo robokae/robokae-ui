@@ -1,6 +1,6 @@
 import React, { forwardRef, type InputHTMLAttributes, type Ref } from "react";
 import { Label, TextareaInput, TextInput } from "./Input.styles";
-import Flex from "../flex";
+import { Flex } from "../flex";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   as?: "input";
