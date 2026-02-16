@@ -53,6 +53,11 @@ export const borderRadius = {
 export const typography = {
   primaryFont: "Plus Jakarta Sans",
   fontFamilies: ["Plus Jakarta Sans:400,600,700"],
+  fontWeight: {
+    regular: 400,
+    medium: 600,
+    bold: 700,
+  },
   fontSize: {
     heading: {
       h1: { sm: "2.027rem", lg: "3.185rem" },
