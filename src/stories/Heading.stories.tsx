@@ -1,5 +1,5 @@
 import { Meta } from "@storybook/react-webpack5";
-import Heading from "../components/heading/Heading";
+import { Heading } from "../components/heading";
 import { HeadingTag } from "../components/heading/Heading.types";
 
 const meta: Meta<typeof Heading> = {

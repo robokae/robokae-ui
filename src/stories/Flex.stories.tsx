@@ -1,7 +1,7 @@
 import { Meta } from "@storybook/react-webpack5";
 import { useTheme } from "styled-components";
-import Flex from "../components/flex/Flex";
-import Card from "../components/card";
+import { Flex } from "../components/flex";
+import { Card } from "../components/card";
 
 const meta: Meta<typeof Flex> = {
   component: Flex,
@@ -47,7 +47,7 @@ const Template = (args) => {
           width: "75px",
           height: "75px",
         }}
-      />
+      />,
     );
   }
 

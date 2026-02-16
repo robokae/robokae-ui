@@ -1,5 +1,5 @@
 import { Meta } from "@storybook/react-webpack5";
-import Icon from "../components/icon/Icon";
+import { Icon } from "../components/icon";
 
 const meta: Meta<typeof Icon> = {
   component: Icon,

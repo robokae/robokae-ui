@@ -1,8 +1,8 @@
 import { Meta } from "@storybook/react-webpack5";
-import Tooltip from "../components/tooltip/Tooltip";
-import Card from "../components/card";
-import Flex from "../components/flex";
-import Text from "../components/text";
+import { Tooltip } from "../components/tooltip";
+import { Card } from "../components/card";
+import { Flex } from "../components/flex";
+import { Text } from "../components/text";
 
 const meta: Meta<typeof Tooltip> = {
   component: Tooltip,

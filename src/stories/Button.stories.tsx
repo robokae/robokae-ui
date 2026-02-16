@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react-webpack5";
-import Button from "../components/button/Button";
+import { Button } from "../components/button";
 import { ComponentProps } from "react";
 
 type StoryProps = ComponentProps<typeof Button> & {
