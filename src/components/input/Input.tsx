@@ -2,19 +2,17 @@ import React, { forwardRef, type InputHTMLAttributes, type Ref } from "react";
 import { Label, TextareaInput, TextInput } from "./Input.styles";
 import { Flex } from "../flex";
 
-export interface DefaultInputProps
-  extends InputHTMLAttributes<HTMLInputElement> {
+interface DefaultInputProps extends InputHTMLAttributes<HTMLInputElement> {
   as?: "input";
 }
 
-export interface TextareaProps
-  extends InputHTMLAttributes<HTMLTextAreaElement> {
+interface TextareaProps extends InputHTMLAttributes<HTMLTextAreaElement> {
   as: "textarea";
   resize?: "both" | "horizontal" | "vertical" | "none";
   rows?: number;
 }
 
-type InputProps = (DefaultInputProps | TextareaProps) & {
+export type InputProps = (DefaultInputProps | TextareaProps) & {
   label?: string;
 };
 

@@ -1,6 +1,6 @@
 {
   "name": "@robokae/robokae-ui",
-  "version": "1.0.31",
+  "version": "1.0.32",
   "description": "Custom React component library",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
