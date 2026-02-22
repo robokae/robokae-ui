@@ -1,5 +1,5 @@
 import React, { forwardRef, type InputHTMLAttributes, type Ref } from "react";
-import { Label, TextareaInput, TextInput } from "./Input.styles";
+import { ErrorMessage, TextareaInput, TextInput } from "./Input.styles";
 import { Flex } from "../flex";
 
 interface DefaultInputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -14,14 +14,16 @@ interface TextareaProps extends InputHTMLAttributes<HTMLTextAreaElement> {
 
 export type InputProps = (DefaultInputProps | TextareaProps) & {
   label?: string;
+  errorMessage?: string;
 };
 
 const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
-  ({ as = "input", label, ...props }, ref) => (
+  ({ as = "input", label, errorMessage, ...props }, ref) => (
     <Flex direction="column" gap="0.5rem">
-      {label && <Label htmlFor={props.id}>{label}</Label>}
+      {label && <label htmlFor={props.id}>{label}</label>}
       {as === "textarea" ? (
         <TextareaInput
+          className={errorMessage ? "error" : ""}
           ref={ref as Ref<HTMLTextAreaElement>}
           rows={(props as TextareaProps).rows || 5}
           resize={(props as TextareaProps).resize}
@@ -29,10 +31,12 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
         />
       ) : (
         <TextInput
+          className={errorMessage ? "error" : ""}
           ref={ref as Ref<HTMLInputElement>}
           {...(props as DefaultInputProps)}
         />
       )}
+      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </Flex>
   ),
 );

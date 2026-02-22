@@ -25,6 +25,7 @@ export const lightTheme = {
     },
     hover: "#E4E9EB",
   },
+  error: "#CC5E57",
   input: {
     background: "#F2F3F3",
     label: "#6D818F",
@@ -65,6 +66,7 @@ export const darkTheme = {
     },
     hover: "#222D33",
   },
+  error: "#F05959",
   input: {
     background: "#11181C",
     label: "#8D9FAA",

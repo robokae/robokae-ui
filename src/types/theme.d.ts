@@ -25,6 +25,7 @@ declare module "styled-components" {
       };
       hover: string;
     };
+    error: string;
     input: {
       background: string;
       label: string;

@@ -10,6 +10,14 @@ export const baseStyles = css`
   border: 1px solid ${({ theme }) => theme.line};
   border-radius: ${borderRadius.sm};
   font-size: 1rem;
+
+  &:focus {
+    border-color: ${({ theme }) => theme.accent};
+  }
+
+  &.error {
+    border-color: ${({ theme }) => theme.error};
+  }
 `;
 
 export const TextInput = styled.input`
@@ -23,7 +31,6 @@ export const TextareaInput = styled.textarea<{
   resize: ${({ resize = "none" }) => resize};
 `;
 
-export const Label = styled.label`
-  color: ${({ theme }) => theme.input.label};
-  font-size: smaller;
+export const ErrorMessage = styled.span`
+  color: ${({ theme }) => theme.error};
 `;
