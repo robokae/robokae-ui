@@ -2,7 +2,8 @@ import React, { forwardRef, type InputHTMLAttributes, type Ref } from "react";
 import { Label, TextareaInput, TextInput } from "./Input.styles";
 import { Flex } from "../flex";
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface DefaultInputProps
+  extends InputHTMLAttributes<HTMLInputElement> {
   as?: "input";
 }
 
@@ -13,11 +14,11 @@ export interface TextareaProps
   rows?: number;
 }
 
-type Props = (InputProps | TextareaProps) & {
+type InputProps = (DefaultInputProps | TextareaProps) & {
   label?: string;
 };
 
-const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, Props>(
+const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
   ({ as = "input", label, ...props }, ref) => (
     <Flex direction="column" gap="0.5rem">
       {label && <Label htmlFor={props.id}>{label}</Label>}
@@ -31,7 +32,7 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, Props>(
       ) : (
         <TextInput
           ref={ref as Ref<HTMLInputElement>}
-          {...(props as InputProps)}
+          {...(props as DefaultInputProps)}
         />
       )}
     </Flex>
