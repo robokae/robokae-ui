@@ -10,6 +10,10 @@ const meta: Meta<typeof Button> = {
   component: Button,
   title: "Button",
   argTypes: {
+    colorScheme: {
+      control: "select",
+      options: ["success", "info"],
+    },
     variant: {
       control: "select",
       options: ["filled", "outline", "plain"],
@@ -30,6 +34,7 @@ const LABEL = "Click me";
 
 export const Filled: Story = {
   args: {
+    colorScheme: "info",
     label: LABEL,
     rounded: false,
     arrow: false,
@@ -44,6 +49,7 @@ export const Filled: Story = {
 
 export const Outline: Story = {
   args: {
+    colorScheme: "info",
     label: LABEL,
     rounded: false,
     arrow: false,
@@ -58,6 +64,7 @@ export const Outline: Story = {
 
 export const Plain: Story = {
   args: {
+    colorScheme: "info",
     label: LABEL,
     rounded: false,
     arrow: false,

@@ -6,17 +6,18 @@ import {
   OutlinedButton,
   PlainButton,
 } from "./Button.styles";
+import type { ButtonTypes } from "../../types/theme";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "filled" | "outline" | "plain";
-  colorScheme?: "primary" | "accent";
+  colorScheme?: typeof ButtonTypes;
   rounded?: boolean;
   arrow?: boolean;
 }
 
 const Button: FC<ButtonProps> = ({
   variant = "plain",
-  colorScheme = "primary",
+  colorScheme = "info",
   rounded = false,
   arrow = false,
   disabled = false,

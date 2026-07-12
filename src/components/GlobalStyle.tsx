@@ -9,9 +9,11 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         background: ${({ theme }) => theme.background.primary};
+        color: ${({ theme }) => theme.text.primary};
     }
 
-    button, input, select, textarea, option, optgroup {
+    button, input, label, select, textarea, option, optgroup {
         font-family: inherit;
+        color: inherit;
     }
 `;

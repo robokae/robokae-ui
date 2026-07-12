@@ -6,7 +6,6 @@ const baseStyles = css`
   border: none;
   outline: none;
   background-color: transparent;
-  border-radius: ${borderRadius.sm};
   cursor: pointer;
   transition: all 0.25s ease-in-out;
 
@@ -18,11 +17,9 @@ const baseStyles = css`
 `;
 
 const roundedStyle = css<{ $rounded?: boolean }>`
-  ${({ $rounded }) =>
-    $rounded &&
-    css`
-      border-radius: ${borderRadius.pill};
-    `}
+  ${({ $rounded }) => css`
+    border-radius: ${$rounded ? borderRadius.pill : borderRadius.sm};
+  `}
 `;
 
 export const FilledButton = styled.button<{
@@ -31,18 +28,20 @@ export const FilledButton = styled.button<{
 }>`
   ${baseStyles};
   ${roundedStyle};
-  color: ${({ theme, $colorScheme }) =>
-    (theme.button as any)[$colorScheme].foreground.primary};
-  background-color: ${({ theme, $colorScheme }) =>
-    (theme.button as any)[$colorScheme].background};
+  ${({ theme, $colorScheme }) => {
+    const { text, background, hoverBackground, hoverText } =
+      theme.button[$colorScheme];
 
-  &:hover {
-    background-image: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.1) 0%,
-      rgba(0, 0, 0, 0.1) 100%
-    );
-  }
+    return css`
+      color: ${text};
+      background-color: ${background};
+
+      &:hover {
+        background-color: ${hoverBackground};
+        color: ${hoverText};
+      }
+    `;
+  }}
 `;
 
 export const OutlinedButton = styled.button<{
@@ -51,25 +50,27 @@ export const OutlinedButton = styled.button<{
 }>`
   ${baseStyles};
   ${roundedStyle};
-  border: 1px solid
-    ${({ theme, $colorScheme }) =>
-      (theme.button as any)[$colorScheme].background.primary};
-  color: ${({ theme, $colorScheme }) =>
-    (theme.button as any)[$colorScheme].foreground.secondary};
+  ${({ theme, $colorScheme }) => {
+    const { text, background } = theme.button[$colorScheme];
 
-  &:hover {
-    border-color: transparent;
-    background-color: ${({ theme, $colorScheme }) =>
-      (theme.button as any)[$colorScheme].background};
-    color: ${({ theme, $colorScheme }) =>
-      (theme.button as any)[$colorScheme].foreground.primary};
-  }
+    return css`
+      color: ${background};
+      background-color: transparent;
+      border: 1px solid ${background};
+
+      &:hover {
+        color: ${text};
+        background-color: ${background};
+        border-color: transparent;
+      }
+    `;
+  }}
 `;
 
 export const PlainButton = styled.button<{ $colorScheme: string }>`
   ${baseStyles};
   padding: 0;
-  color: ${({ theme }) => theme.text.primary};
+  color: ${({ theme, $colorScheme }) => theme.button[$colorScheme].background};
 `;
 
 export const Container = styled.div`
