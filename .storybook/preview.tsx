@@ -1,15 +1,15 @@
 import { Preview } from "@storybook/react";
 import { GlobalStyle } from "../src/components/GlobalStyle";
 import { ThemeProvider } from "styled-components";
-import { darkTheme, lightTheme } from "../src/theme/theme";
+import { getTheme } from "../src/theme/theme";
 import { withThemeFromJSXProvider } from "@storybook/addon-themes";
 
 const preview: Preview = {
   decorators: [
     withThemeFromJSXProvider({
       themes: {
-        light: lightTheme,
-        dark: darkTheme,
+        light: getTheme("light"),
+        dark: getTheme("dark"),
       },
       defaultTheme: "light",
       Provider: ThemeProvider,

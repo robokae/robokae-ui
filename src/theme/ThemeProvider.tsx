@@ -1,6 +1,6 @@
 import React, { type PropsWithChildren } from "react";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
-import { darkTheme, lightTheme } from "./theme";
+import { darkTheme, getTheme, lightTheme } from "./theme";
 import { useWebFonts } from "../hooks/useWebFonts";
 import { typography } from "../constants";
 
@@ -14,7 +14,7 @@ export const ThemeProvider: React.FC<PropsWithChildren<ThemeProviderProps>> = ({
 }) => {
   useWebFonts(typography.fontFamilies);
   return (
-    <StyledThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
+    <StyledThemeProvider theme={getTheme(theme)}>
       {children}
     </StyledThemeProvider>
   );

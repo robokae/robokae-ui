@@ -1,41 +1,40 @@
 import "styled-components";
 
+interface ButtonTheme {
+  background: string;
+  text: string;
+  hoverBackground: string;
+  hoverText: string;
+}
+
+export const ButtonTypes: string = "success" | "info" | "warning" | "disabled";
+
 declare module "styled-components" {
   export interface DefaultTheme {
-    accent: string;
     background: {
       primary: string;
       secondary: string;
     };
+    border: string;
     boxShadow: string;
     button: {
-      primary: {
-        background: string;
-        foreground: {
-          primary: string;
-          secondary: string;
-        };
-      };
-      accent: {
-        background: string;
-        foreground: {
-          primary: string;
-          secondary: string;
-        };
-      };
-      hover: string;
+      [key in ButtonTypes]: ButtonTheme;
     };
-    error: string;
     input: {
       background: string;
       label: string;
       placeholder: string;
     };
-    line: string;
     overlay: string;
+    status: {
+      success: string;
+      error: string;
+    };
     text: {
       primary: string;
       secondary: string;
+      disabled?: string;
+      error?: string;
     };
     tooltip: {
       background: string;
