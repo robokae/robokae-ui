@@ -2,7 +2,6 @@ import { Meta } from "@storybook/react-webpack5";
 import { Tooltip } from "../components/tooltip";
 import { Card } from "../components/card";
 import { Flex } from "../components/flex";
-import { Text } from "../components/text";
 
 const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
@@ -29,7 +28,7 @@ const Template = (args) => {
         style={{ width: "100%", height: "100%" }}
       >
         <Tooltip content={args.content} position={args.position}>
-          <Text>Hover over me</Text>
+          <p>Hover over me</p>
         </Tooltip>
       </Flex>
     </Card>

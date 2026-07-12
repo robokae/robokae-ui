@@ -5,7 +5,6 @@ export * from "./flex";
 export * from "./heading";
 export * from "./icon";
 export * from "./input";
-export * from "./text";
 export * from "./tooltip";
 export * from "./modal";
 export * from "./overlay";
