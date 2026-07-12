@@ -1,7 +1,6 @@
 export * from "./button";
 export * from "./card";
 export * from "./collapsible";
-export * from "./flex";
 export * from "./heading";
 export * from "./icon";
 export * from "./input";

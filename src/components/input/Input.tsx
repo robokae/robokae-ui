@@ -1,6 +1,10 @@
 import React, { forwardRef, type InputHTMLAttributes, type Ref } from "react";
-import { ErrorMessage, TextareaInput, TextInput } from "./Input.styles";
-import { Flex } from "../flex";
+import {
+  Container,
+  ErrorMessage,
+  TextareaInput,
+  TextInput,
+} from "./Input.styles";
 
 interface DefaultInputProps extends InputHTMLAttributes<HTMLInputElement> {
   as?: "input";
@@ -19,7 +23,7 @@ export type InputProps = (DefaultInputProps | TextareaProps) & {
 
 const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
   ({ as = "input", label, errorMessage, ...props }, ref) => (
-    <Flex direction="column" gap="0.5rem">
+    <Container>
       {label && <label htmlFor={props.id}>{label}</label>}
       {as === "textarea" ? (
         <TextareaInput
@@ -37,7 +41,7 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
         />
       )}
       {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
-    </Flex>
+    </Container>
   ),
 );
 

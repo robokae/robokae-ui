@@ -20,6 +20,12 @@ export const baseStyles = css`
   }
 `;
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${gap.sm};
+`;
+
 export const TextInput = styled.input`
   ${baseStyles}
 `;

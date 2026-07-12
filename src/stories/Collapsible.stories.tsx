@@ -1,7 +1,6 @@
 import { Meta } from "@storybook/react-webpack5";
 import { Collapsible } from "../components/collapsible";
 import { Card } from "../components/card";
-import { Flex } from "../components/flex";
 
 const meta: Meta<typeof Collapsible> = {
   component: Collapsible,
@@ -18,10 +17,16 @@ export default meta;
 const Template = (args) => (
   <Card style={{ width: "500px" }}>
     <Collapsible animate={args.animate} style={{ width: "100%" }}>
-      <Flex justifyContent="space-between">
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
         <Collapsible.Heading as="h5">Heading</Collapsible.Heading>
         <Collapsible.Trigger />
-      </Flex>
+      </div>
       <Collapsible.Content>
         <p>
           Wafer cheesecake sesame snaps cake shortbread chocolate cake. Powder

@@ -1,7 +1,6 @@
 import { Meta } from "@storybook/react-webpack5";
 import { Tooltip } from "../components/tooltip";
 import { Card } from "../components/card";
-import { Flex } from "../components/flex";
 
 const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
@@ -22,15 +21,20 @@ export default meta;
 const Template = (args) => {
   return (
     <Card style={{ width: "500px", height: "300px" }}>
-      <Flex
-        justifyContent="center"
-        alignItems="center"
-        style={{ width: "100%", height: "100%" }}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          height: "100%",
+        }}
       >
         <Tooltip content={args.content} position={args.position}>
           <p>Hover over me</p>
         </Tooltip>
-      </Flex>
+      </div>
     </Card>
   );
 };

@@ -9,10 +9,9 @@ import React, {
 } from "react";
 import { useTheme } from "styled-components";
 import { type HeadingProps } from "../heading/Heading.types";
-import { gap } from "../../constants";
-import { Flex } from "../flex";
 import { Heading } from "../heading";
 import { Icon } from "../icon";
+import { Container } from "./Collapsible.styles";
 
 interface CollapsibleContext {
   isCollapsed: boolean;
@@ -48,9 +47,7 @@ function Collapsible({
     <CollapsibleContext.Provider
       value={{ isCollapsed, toggle, animate: animate ?? true }}
     >
-      <Flex direction="column" gap={gap.sm} {...rest}>
-        {children}
-      </Flex>
+      <Container {...rest}>{children}</Container>
     </CollapsibleContext.Provider>
   );
 }

@@ -2,7 +2,7 @@ import React, { type FC, type HTMLAttributes } from "react";
 import * as bootstrapIcons from "react-bootstrap-icons";
 import { iconSize } from "../../constants";
 import { useTheme } from "styled-components";
-import { Flex } from "../flex";
+import { Container } from "./Icon.styles";
 
 export interface IconProps extends HTMLAttributes<HTMLDivElement> {
   name: keyof typeof bootstrapIcons;
@@ -19,12 +19,12 @@ const Icon: FC<IconProps> = ({ name, size = "sm", color, ...props }) => {
   }
 
   return (
-    <Flex alignItems="center" {...props}>
+    <Container {...props}>
       <BootstrapIcon
         size={iconSize[size]}
         color={color || theme.text.primary}
       />
-    </Flex>
+    </Container>
   );
 };
 
