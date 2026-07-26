@@ -24,14 +24,17 @@ const meta: Meta<typeof Input> = {
 export default meta;
 
 const Template = (args) => (
-  <Card style={{ width: "500px" }}>
+  <div style={{ width: "500px" }}>
     <Input {...args} />
-  </Card>
+  </div>
 );
 
 const defaultArgs = {
   as: "textarea",
   label: "Label",
+  leftSublabel: "Left sublabel",
+  rightSublabel: "Right sublabel",
+  errorMessage: "Error message",
 };
 
 export const LightTheme = Template.bind({});
