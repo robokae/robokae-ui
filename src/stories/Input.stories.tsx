@@ -32,9 +32,9 @@ const Template = (args) => (
 const defaultArgs = {
   as: "textarea",
   label: "Label",
-  leftSublabel: "Left sublabel",
-  rightSublabel: "Right sublabel",
-  errorMessage: "Error message",
+  leftSublabel: "",
+  rightSublabel: "",
+  errorMessage: "",
 };
 
 export const LightTheme = Template.bind({});

@@ -80,8 +80,10 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
           <FieldHeader>
             {label && <StyledLabel htmlFor={props.id}>{label}</StyledLabel>}
             <SublabelContainer ref={sublabelContainerRef}>
-              {leftSublabel && <p>{leftSublabel}</p>}
-              {rightSublabel && <p>{rightSublabel}</p>}
+              {leftSublabel && <p className="left-sublabel">{leftSublabel}</p>}
+              {rightSublabel && (
+                <p className="right-sublabel">{rightSublabel}</p>
+              )}
             </SublabelContainer>
           </FieldHeader>
           {as === "textarea" ? (

@@ -52,10 +52,17 @@ export const SublabelContainer = styled.div`
     font-size: 0.9rem;
     color: ${({ theme }) => theme.text.secondary};
     width: 50%;
+    max-width: 50%;
     word-wrap: break-word;
   }
 
-  & > p:last-child {
+  & > p.left-sublabel {
+    margin-right: auto;
+    text-align: left;
+  }
+
+  & > p.right-sublabel {
+    margin-left: auto;
     text-align: right;
   }
 `;
