@@ -1,5 +1,7 @@
 import { Meta } from "@storybook/react-webpack5";
 import { Icon } from "../components/icon";
+import { ComponentProps } from "react";
+import * as bootstrapIcons from "react-bootstrap-icons";
 
 const meta: Meta<typeof Icon> = {
   component: Icon,
@@ -7,7 +9,7 @@ const meta: Meta<typeof Icon> = {
   argTypes: {
     name: {
       control: "select",
-      options: Object.keys(require("react-bootstrap-icons")),
+      options: Object.keys(bootstrapIcons),
       description: "Icon name",
     },
     size: {
@@ -22,19 +24,10 @@ const meta: Meta<typeof Icon> = {
 
 export default meta;
 
-const Template = (args) => <Icon {...args} />;
-
-const defaultArgs = {
-  name: "Book",
-  size: "md",
-};
-
-export const LightTheme = Template.bind({});
-LightTheme.args = defaultArgs;
-
-export const DarkTheme = Template.bind({});
-DarkTheme.args = defaultArgs;
-
-DarkTheme.parameters = {
-  backgrounds: { default: "dark" },
+export const Default = {
+  args: {
+    name: "Book",
+    size: "md",
+  },
+  render: ({ ...props }: ComponentProps<typeof Icon>) => <Icon {...props} />,
 };

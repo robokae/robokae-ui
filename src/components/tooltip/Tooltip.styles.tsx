@@ -6,6 +6,7 @@ export const Trigger = styled.span`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: max-content;
 `;
 
 export const Container = styled.div<{

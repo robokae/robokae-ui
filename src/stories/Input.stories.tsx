@@ -1,6 +1,6 @@
 import { Meta } from "@storybook/react-webpack5";
 import { Input } from "../components/input";
-import { Card } from "../components/card";
+import { ComponentProps } from "react";
 
 const meta: Meta<typeof Input> = {
   component: Input,
@@ -23,26 +23,17 @@ const meta: Meta<typeof Input> = {
 
 export default meta;
 
-const Template = (args) => (
-  <div style={{ width: "500px" }}>
-    <Input {...args} />
-  </div>
-);
-
-const defaultArgs = {
-  as: "textarea",
-  label: "Label",
-  leftSublabel: "",
-  rightSublabel: "",
-  errorMessage: "",
-};
-
-export const LightTheme = Template.bind({});
-LightTheme.args = defaultArgs;
-
-export const DarkTheme = Template.bind({});
-DarkTheme.args = defaultArgs;
-
-DarkTheme.parameters = {
-  backgrounds: { default: "dark" },
+export const Default = {
+  args: {
+    as: "textarea",
+    label: "Label",
+    leftSublabel: "",
+    rightSublabel: "",
+    errorMessage: "",
+  },
+  render: ({ ...props }: ComponentProps<typeof Input>) => (
+    <div style={{ width: "500px" }}>
+      <Input {...props} />
+    </div>
+  ),
 };

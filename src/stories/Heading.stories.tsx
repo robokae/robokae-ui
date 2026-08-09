@@ -11,7 +11,7 @@ export default meta;
 
 const tags: HeadingTag[] = ["h1", "h2", "h3", "h4", "h5"];
 
-const Template = () => (
+export const Default = () => (
   <>
     {tags.map((tag, index) => (
       <Heading as={tag} key={index}>
@@ -20,11 +20,3 @@ const Template = () => (
     ))}
   </>
 );
-
-export const LightTheme = Template.bind({});
-
-export const DarkTheme = Template.bind({});
-
-DarkTheme.parameters = {
-  backgrounds: { default: "dark" },
-};

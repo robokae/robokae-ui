@@ -28,11 +28,10 @@ const meta: Meta<typeof Button> = {
 };
 
 export default meta;
-type Story = StoryObj<StoryProps>;
 
 const LABEL = "Click me";
 
-export const Filled: Story = {
+export const Filled = {
   args: {
     colorScheme: "info",
     label: LABEL,
@@ -47,7 +46,7 @@ export const Filled: Story = {
   ),
 };
 
-export const Outline: Story = {
+export const Outline = {
   args: {
     colorScheme: "info",
     label: LABEL,
@@ -62,7 +61,7 @@ export const Outline: Story = {
   ),
 };
 
-export const Plain: Story = {
+export const Plain = {
   args: {
     colorScheme: "info",
     label: LABEL,

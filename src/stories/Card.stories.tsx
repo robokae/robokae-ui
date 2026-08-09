@@ -1,7 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react-webpack5";
 import { Button } from "../components/button";
 import { Card } from "../components/card";
-import { ComponentProps } from "react";
 
 const meta: Meta<typeof Card> = {
   component: Card,
@@ -9,9 +8,8 @@ const meta: Meta<typeof Card> = {
 };
 
 export default meta;
-type Story = StoryObj<ComponentProps<typeof Card>>;
 
-export const WithCTA: Story = {
+export const Default = {
   render: () => (
     <Card style={{ width: "500px" }}>
       <Card.Heading as="h5">Card heading</Card.Heading>
